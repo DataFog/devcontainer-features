@@ -37,8 +37,8 @@ jobs:
           branch=automated-documentation-update-$GITHUB_RUN_ID
           git checkout -b $branch
           message='Automated documentation update'
-          # Add / update and commit
-          git add */**/README.md
+          # Add / update and commit (no-op when docs are unchanged)
+          git add */**/README.md || true
           git commit -m 'Automated documentation update [skip ci]' || export NO_UPDATES=true
           # Push
           if [ "$NO_UPDATES" != "true" ] ; then
