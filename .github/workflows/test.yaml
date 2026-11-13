@@ -6,6 +6,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   test-scenarios:
     runs-on: ubuntu-latest
@@ -24,6 +28,14 @@ jobs:
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
+
+      - name: "Authenticate to GHCR"
+        shell: bash
+        run: |
+          set -euo pipefail
+          token='${{ secrets.GHCR_TOKEN }}'
+          [ -n "$token" ] || token='${{ secrets.GITHUB_TOKEN }}'
+          echo "$token" | docker login ghcr.io --username '${{ github.actor }}' --password-stdin
 
       - name: "Testing '${{ matrix.features }}' against '${{ matrix.baseImage }}'"
         run: devcontainer features test -f ${{ matrix.features }} -i ${{ matrix.baseImage }} .
