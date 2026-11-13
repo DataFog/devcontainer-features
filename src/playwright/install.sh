@@ -10,6 +10,13 @@ export PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers
 
 apt-get update -y
 apt-get install -y --no-install-recommends ca-certificates curl
+# npx is needed to fetch the browsers; fall back to the distro package when
+# no Node feature (node-pinned) is installed alongside.
+# Playwright needs Node >= 20; the distro package is too old.
+if ! command -v npx >/dev/null 2>&1; then
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    apt-get install -y --no-install-recommends nodejs
+fi
 rm -rf /var/lib/apt/lists/*
 
 # System libraries needed by the browser binaries.
