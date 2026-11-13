@@ -1,0 +1,17 @@
+{
+  "id": "python-tools",
+  "version": "1.0.0",
+  "name": "Python 3 with packaging tools",
+  "description": "Installs Python 3 (system package manager, PEP 668 aware) plus optional pip packages such as maturin and huggingface_hub.",
+  "documentationURL": "https://github.com/DataFog/devcontainer-features/tree/main/src/python-tools",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ],
+  "options": {
+    "pip_packages": {
+      "type": "string",
+      "default": "",
+      "description": "Space-separated pip packages to install system-wide"
+    }
+  }
+}

@@ -28,6 +28,10 @@ mounted, so they cannot read repo files — pass pins via options.
 | Feature | Description |
 | --- | --- |
 | `node-pinned` | Installs Node.js from NodeSource at a pinned major version |
+| `build-tools` | Native C/C++ toolchain for compiling Rust crates and native Python extensions |
+| `python-tools` | Python 3 + optional system-wide pip packages (e.g. maturin) |
+| `rust-pinned` | rustup with a pinned toolchain, optional components/targets and wasm-bindgen-cli |
+| `playwright` | Playwright system deps and browser binaries in a shared path |
 
 ## Releasing
 

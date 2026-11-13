@@ -1,0 +1,18 @@
+{
+  "rust-pinned-versioned": {
+    "image": "ubuntu:24.04",
+    "features": {
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "username": "ubuntu",
+        "installZsh": false
+      },
+      "build-tools": {},
+      "rust-pinned": {
+        "toolchain": "1.88.0",
+        "components": "rustfmt,clippy",
+        "targets": "wasm32-unknown-unknown",
+        "wasm_bindgen": "0.2.127"
+      }
+    }
+  }
+}

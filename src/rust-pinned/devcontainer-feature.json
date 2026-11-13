@@ -1,0 +1,51 @@
+{
+  "id": "rust-pinned",
+  "version": "1.0.0",
+  "name": "Rust (pinned toolchain)",
+  "description": "Installs rustup with a pinned toolchain, optional components and targets, and an optional wasm-bindgen-cli version. Keep the toolchain in sync with rust-toolchain.toml.",
+  "documentationURL": "https://github.com/DataFog/devcontainer-features/tree/main/src/rust-pinned",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/datafog/devcontainer-features/build-tools"
+  ],
+  "options": {
+    "toolchain": {
+      "type": "string",
+      "proposals": [
+        "stable",
+        "1.88.0"
+      ],
+      "default": "stable",
+      "description": "Rust toolchain channel to install (match rust-toolchain.toml)"
+    },
+    "profile": {
+      "type": "string",
+      "proposals": [
+        "minimal",
+        "default"
+      ],
+      "default": "minimal",
+      "description": "rustup install profile"
+    },
+    "components": {
+      "type": "string",
+      "default": "",
+      "description": "Comma-separated rustup components (e.g. rustfmt,clippy)"
+    },
+    "targets": {
+      "type": "string",
+      "default": "",
+      "description": "Comma-separated extra compilation targets (e.g. wasm32-unknown-unknown)"
+    },
+    "wasm_bindgen": {
+      "type": "string",
+      "default": "",
+      "description": "wasm-bindgen-cli version to cargo-install (match Cargo.lock)"
+    },
+    "username": {
+      "type": "string",
+      "default": "ubuntu",
+      "description": "Non-root user that owns the toolchain"
+    }
+  }
+}

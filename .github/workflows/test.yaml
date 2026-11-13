@@ -13,9 +13,12 @@ jobs:
       matrix:
         features:
           - node-pinned
+          - build-tools
+          - python-tools
+          - rust-pinned
+          - playwright
         baseImage:
           - ubuntu:24.04
-          - mcr.microsoft.com/devcontainers/base:ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 

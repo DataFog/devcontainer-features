@@ -1,0 +1,7 @@
+{
+  "id": "build-tools",
+  "version": "1.0.0",
+  "name": "C/C++ build toolchain",
+  "description": "Installs the native build essentials (compilers, headers, pkg-config, wget, xz) needed to compile Rust crates and native Python extensions.",
+  "documentationURL": "https://github.com/DataFog/devcontainer-features/tree/main/src/build-tools"
+}

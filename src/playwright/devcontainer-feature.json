@@ -1,0 +1,22 @@
+{
+  "id": "playwright",
+  "version": "1.0.0",
+  "name": "Playwright browsers",
+  "description": "Installs Playwright's system dependencies and browser binaries into a shared, world-readable location. Keep the version in sync with the consuming project's playwright devDependency.",
+  "documentationURL": "https://github.com/DataFog/devcontainer-features/tree/main/src/playwright",
+  "installsAfter": [
+    "ghcr.io/datafog/devcontainer-features/node-pinned"
+  ],
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "playwright npm package version to install browsers for"
+    },
+    "browsers": {
+      "type": "string",
+      "default": "chromium",
+      "description": "Comma-separated browsers to install (chromium, firefox, webkit)"
+    }
+  }
+}

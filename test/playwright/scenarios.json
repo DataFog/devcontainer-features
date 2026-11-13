@@ -1,0 +1,14 @@
+{
+  "playwright-chromium": {
+    "image": "ubuntu:24.04",
+    "features": {
+      "node-pinned": {
+        "version": "24"
+      },
+      "playwright": {
+        "version": "1.62.1",
+        "browsers": "chromium"
+      }
+    }
+  }
+}
