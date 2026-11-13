@@ -1,0 +1,10 @@
+{
+  "node-pinned-major": {
+    "image": "ubuntu:24.04",
+    "features": {
+      "node-pinned": {
+        "version": "24"
+      }
+    }
+  }
+}
